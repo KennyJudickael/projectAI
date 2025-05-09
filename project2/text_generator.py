@@ -21,24 +21,24 @@ def generate_text(prompt, world_limit=100):
 
 
 
+# if __name__ == "__main__":
+
+#     prompt = "Write a short story about a dragon and a knight."
+#     print("Generated text:")
+#     print(generate_text(prompt))
+
+# Gradio Interface
+# Create a Gradio interface for the text generation function
+interface = gr.Interface(
+    fn=generate_text,
+    inputs=[
+        gr.Textbox(lines=3, placeholder="Enter your prompt here", label="Input Prompt"),
+        gr.Slider(50, 500,step=50, label="Word Limit")
+    ],
+    outputs=gr.Textbox(label="Generated Text"),
+    title="Text Generator",
+    description="Enter a prompt to generate text with a specified word limit using the DeepSeek model."
+    )
 if __name__ == "__main__":
-
-    prompt = "Write a short story about a dragon and a knight."
-    print("Generated text:")
-    print(generate_text(prompt))
-
-#     # Gradio Interface
-#     # Create a Gradio interface for the text generation function
-#     interface = gr.Interface(
-#         fn=generate_text,
-#         inputs=[
-#             gr.Textbox(lines=10, label="Input Prompt"),
-#             gr.Slider(minimum=1, maximum=500, default=100, label="Word Limit")
-#         ],
-#         outputs=gr.Textbox(label="Generated Text"),
-#         title="Text Generator",
-#         description="Enter a prompt to generate text with a specified word limit using the DeepSeek model."
-#     )
-
-#     # Launch the Gradio app
-#     interface.launch(share=True)  # Set share=True to get a public link for the app
+    # Launch the Gradio app
+    interface.launch(share=True)  # Set share=True to get a public link for the app
