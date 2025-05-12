@@ -1,7 +1,12 @@
 import requests
 import gradio as gr
+from dotenv import load_dotenv
+import os
 
-API_KEY = "your_api_key_here"
+load_dotenv()
+
+# Récupérer la clé
+API_KEY = os.getenv("API_KEY")
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={API_KEY}"
 
 def generate_text(prompt, word_limit=100):

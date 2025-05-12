@@ -1,8 +1,7 @@
 import requests
 import gradio as gr
 
-OLLAMA_URL = "http://localhost:11434/api/generate"  # Example API URL for OLLAMA
-
+OLLAMA_URL = "http://localhost:11434/api/generate"  # Example API URL for
 def generate_text(prompt, world_limit=100):
 
     full_prompt = f"Generate a text with a word limit of {world_limit} words:\n\n{prompt}"
